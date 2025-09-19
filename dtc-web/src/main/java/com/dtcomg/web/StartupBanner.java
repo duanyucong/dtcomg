@@ -28,7 +28,7 @@ public class StartupBanner implements ApplicationRunner {
         logger.info("\n----------------------------------------------------------\n\t" +
                 "Application '{}' is running! Access URLs:\n\t" +
                 "Local: \t\t{}\n\t" +
-                "Swagger UI: \t{}/swagger-ui/swagger-ui/index.html\n" +
+                "Swagger UI: \t{}/swagger-ui/index.html\n" +
                 "----------------------------------------------------------",
                 appName, localUrl, localUrl);
     }

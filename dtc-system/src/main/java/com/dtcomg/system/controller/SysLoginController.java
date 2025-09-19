@@ -4,6 +4,8 @@ import com.dtcomg.system.common.ApiResult;
 import com.dtcomg.system.domain.SysUser;
 import com.dtcomg.system.security.JwtUtils;
 import com.dtcomg.system.security.LoginUser;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
+@Tag(name = "用户认证")
 @RestController
 @RequestMapping("/api")
 public class SysLoginController {
@@ -28,6 +31,7 @@ public class SysLoginController {
     @Autowired
     private JwtUtils jwtUtils;
 
+    @Operation(summary = "用户登录")
     @PostMapping("/login")
     public ApiResult<?> login(@RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
@@ -42,6 +46,7 @@ public class SysLoginController {
         return ApiResult.success(tokenMap);
     }
 
+    @Operation(summary = "获取用户信息")
     @GetMapping("/getInfo")
     public ApiResult<?> getInfo() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -57,6 +62,7 @@ public class SysLoginController {
         return ApiResult.success(data);
     }
 
+    @Operation(summary = "用户登出")
     @PostMapping("/logout")
     public ApiResult<?> logout() {
         return ApiResult.success("登出成功");
