@@ -1,0 +1,30 @@
+server:
+  port: 8181
+
+spring:
+  application:
+    name: dtcomg
+  datasource:
+    url: jdbc:mysql://localhost:3306/dtcomg?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+
+swagger:
+  enabled: true
+  title: DTC_OMG
+  description: 接口文档
+  version: 1.0.0
+  base-package: com.dtcomg.web.controller, com.dtcomg.system.controller
+  contact:
+    name: API 支持团队
+    email: support@example.com
+  security:
+    name: Authorization
+    type: apiKey
+    in: header
