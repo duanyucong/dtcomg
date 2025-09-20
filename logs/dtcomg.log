@@ -1,0 +1,296 @@
+2025-09-20T21:23:57.172+08:00 ERROR 44460 --- [dtcomg] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - 'File' option has the same value "logs/dtcomg.log" as that given for appender [FILE] defined earlier.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - For more information, please visit https://logback.qos.ch/codes.html#earlier_fa_collision
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.dtcomg.web.DtcomgApplication.main(DtcomgApplication.java:12)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - 'File' option has the same value "logs/dtcomg.log" as that given for appender [FILE] defined earlier.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - For more information, please visit https://logback.qos.ch/codes.html#earlier_fa_collision
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:287)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:265)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:81)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:196)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 19 common frames omitted
+
+2025-09-20T21:26:34.112+08:00 ERROR 40920 --- [dtcomg] [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - 'File' option has the same value "logs/dtcomg.log" as that given for appender [FILE] defined earlier.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - For more information, please visit https://logback.qos.ch/codes.html#earlier_fa_collision
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:330)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352)
+	at com.dtcomg.web.DtcomgApplication.main(DtcomgApplication.java:12)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - 'File' option has the same value "logs/dtcomg.log" as that given for appender [FILE] defined earlier.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[ROLLING_FILE] - For more information, please visit https://logback.qos.ch/codes.html#earlier_fa_collision
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:287)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:265)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:81)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:196)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 19 common frames omitted
+
+2025-09-20 21:27:31.515 [main] INFO  com.dtcomg.web.DtcomgApplication - Starting DtcomgApplication using Java 21.0.8 with PID 15156 (D:\Project\Java\dtcomg\dtc-web\target\classes started by duany in D:\Project\Java\dtcomg)
+2025-09-20 21:27:31.517 [main] DEBUG com.dtcomg.web.DtcomgApplication - Running with Spring Boot v3.3.13, Spring v6.1.21
+2025-09-20 21:27:31.517 [main] INFO  com.dtcomg.web.DtcomgApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-20 21:27:32.815 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8181 (http)
+2025-09-20 21:27:32.827 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8181"]
+2025-09-20 21:27:32.829 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-20 21:27:32.829 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-09-20 21:27:32.891 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-20 21:27:32.898 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1321 ms
+2025-09-20 21:27:33.244 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.dtcomg.system.domain.SysRoleMenu".
+2025-09-20 21:27:33.245 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.dtcomg.system.domain.SysRoleMenu ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-09-20 21:27:33.259 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.dtcomg.system.domain.SysUserRole".
+2025-09-20 21:27:33.259 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.dtcomg.system.domain.SysUserRole ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-09-20 21:27:33.457 [main] DEBUG c.d.s.s.JwtAuthenticationTokenFilter - Filter 'jwtAuthenticationTokenFilter' configured for use
+2025-09-20 21:27:33.584 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-20 21:27:34.033 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-09-20 21:27:34.259 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8181"]
+2025-09-20 21:27:34.277 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8181 (http) with context path '/'
+2025-09-20 21:27:34.287 [main] INFO  com.dtcomg.web.DtcomgApplication - Started DtcomgApplication in 3.37 seconds (process running for 3.781)
+2025-09-20 21:27:34.290 [main] INFO  com.dtcomg.web.StartupBanner - 
+----------------------------------------------------------
+	Application 'dtcomg' is running! Access URLs:
+	Local: 		http://localhost:8181
+	Swagger UI: 	http://localhost:8181/swagger-ui/index.html
+----------------------------------------------------------
+2025-09-20 21:29:45.227 [main] INFO  com.dtcomg.web.DtcomgApplication - Starting DtcomgApplication using Java 21.0.8 with PID 32544 (D:\Project\Java\dtcomg\dtc-web\target\classes started by duany in D:\Project\Java\dtcomg)
+2025-09-20 21:29:45.228 [main] DEBUG com.dtcomg.web.DtcomgApplication - Running with Spring Boot v3.3.13, Spring v6.1.21
+2025-09-20 21:29:45.229 [main] INFO  com.dtcomg.web.DtcomgApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-20 21:29:46.454 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8181 (http)
+2025-09-20 21:29:46.465 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8181"]
+2025-09-20 21:29:46.467 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-20 21:29:46.467 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-09-20 21:29:46.539 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-20 21:29:46.540 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1262 ms
+2025-09-20 21:29:46.834 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.dtcomg.system.domain.SysRoleMenu".
+2025-09-20 21:29:46.834 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.dtcomg.system.domain.SysRoleMenu ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-09-20 21:29:46.857 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.dtcomg.system.domain.SysUserRole".
+2025-09-20 21:29:46.858 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.dtcomg.system.domain.SysUserRole ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-09-20 21:29:47.039 [main] DEBUG c.d.s.s.JwtAuthenticationTokenFilter - Filter 'jwtAuthenticationTokenFilter' configured for use
+2025-09-20 21:29:47.164 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-20 21:29:47.625 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-09-20 21:29:47.819 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8181"]
+2025-09-20 21:29:47.837 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8181 (http) with context path '/'
+2025-09-20 21:29:47.847 [main] INFO  com.dtcomg.web.DtcomgApplication - Started DtcomgApplication in 3.143 seconds (process running for 3.536)
+2025-09-20 21:29:47.851 [main] INFO  com.dtcomg.web.StartupBanner - 
+----------------------------------------------------------
+	Application 'dtcomg' is running! Access URLs:
+	Local: 		http://localhost:8181
+	Swagger UI: 	http://localhost:8181/swagger-ui/index.html
+----------------------------------------------------------
+2025-09-20 21:31:05.505 [main] INFO  com.dtcomg.web.DtcomgApplication - Starting DtcomgApplication using Java 21.0.8 with PID 33156 (D:\Project\Java\dtcomg\dtc-web\target\classes started by duany in D:\Project\Java\dtcomg)
+2025-09-20 21:31:05.506 [main] DEBUG com.dtcomg.web.DtcomgApplication - Running with Spring Boot v3.3.13, Spring v6.1.21
+2025-09-20 21:31:05.507 [main] INFO  com.dtcomg.web.DtcomgApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-20 21:31:06.835 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8181 (http)
+2025-09-20 21:31:06.849 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8181"]
+2025-09-20 21:31:06.851 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-20 21:31:06.851 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-09-20 21:31:06.919 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-20 21:31:06.919 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1353 ms
+2025-09-20 21:31:07.226 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.dtcomg.system.domain.SysRoleMenu".
+2025-09-20 21:31:07.227 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.dtcomg.system.domain.SysRoleMenu ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-09-20 21:31:07.242 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.dtcomg.system.domain.SysUserRole".
+2025-09-20 21:31:07.242 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.dtcomg.system.domain.SysUserRole ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-09-20 21:31:07.438 [main] DEBUG c.d.s.s.JwtAuthenticationTokenFilter - Filter 'jwtAuthenticationTokenFilter' configured for use
+2025-09-20 21:31:07.567 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-20 21:31:07.980 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-09-20 21:31:08.176 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8181"]
+2025-09-20 21:31:08.194 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8181 (http) with context path '/'
+2025-09-20 21:31:08.204 [main] INFO  com.dtcomg.web.DtcomgApplication - Started DtcomgApplication in 3.233 seconds (process running for 3.567)
+2025-09-20 21:31:08.208 [main] INFO  com.dtcomg.web.StartupBanner - 
+----------------------------------------------------------
+	Application 'dtcomg' is running! Access URLs:
+	Local: 		http://localhost:8181
+	Swagger UI: 	http://localhost:8181/swagger-ui/index.html
+----------------------------------------------------------
+2025-09-20 21:31:10.301 [http-nio-8181-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-20 21:31:10.301 [http-nio-8181-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-09-20 21:31:10.302 [http-nio-8181-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-09-20 21:31:11.322 [http-nio-8181-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 520 ms
+2025-09-20 21:31:42.398 [main] INFO  com.dtcomg.web.DtcomgApplication - Starting DtcomgApplication using Java 21.0.8 with PID 41820 (D:\Project\Java\dtcomg\dtc-web\target\classes started by duany in D:\Project\Java\dtcomg)
+2025-09-20 21:31:42.399 [main] DEBUG com.dtcomg.web.DtcomgApplication - Running with Spring Boot v3.3.13, Spring v6.1.21
+2025-09-20 21:31:42.399 [main] INFO  com.dtcomg.web.DtcomgApplication - No active profile set, falling back to 1 default profile: "default"
+2025-09-20 21:31:43.590 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8181 (http)
+2025-09-20 21:31:43.603 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8181"]
+2025-09-20 21:31:43.604 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-09-20 21:31:43.604 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-09-20 21:31:43.664 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-09-20 21:31:43.665 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1221 ms
+2025-09-20 21:31:43.948 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.dtcomg.system.domain.SysRoleMenu".
+2025-09-20 21:31:43.948 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.dtcomg.system.domain.SysRoleMenu ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-09-20 21:31:43.962 [main] WARN  c.b.m.core.metadata.TableInfoHelper - Can not find table primary key in Class: "com.dtcomg.system.domain.SysUserRole".
+2025-09-20 21:31:43.962 [main] WARN  c.b.m.c.injector.DefaultSqlInjector - class com.dtcomg.system.domain.SysUserRole ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-09-20 21:31:44.117 [main] DEBUG c.d.s.s.JwtAuthenticationTokenFilter - Filter 'jwtAuthenticationTokenFilter' configured for use
+2025-09-20 21:31:44.238 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-09-20 21:31:44.649 [main] INFO  o.s.v.b.OptionalValidatorFactoryBean - Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-09-20 21:31:44.833 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8181"]
+2025-09-20 21:31:44.846 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8181 (http) with context path '/'
+2025-09-20 21:31:44.855 [main] INFO  com.dtcomg.web.DtcomgApplication - Started DtcomgApplication in 2.973 seconds (process running for 3.347)
+2025-09-20 21:31:44.858 [main] INFO  com.dtcomg.web.StartupBanner - 
+----------------------------------------------------------
+	Application 'dtcomg' is running! Access URLs:
+	Local: 		http://localhost:8181
+	Swagger UI: 	http://localhost:8181/swagger-ui/index.html
+----------------------------------------------------------
+2025-09-20 21:31:46.879 [http-nio-8181-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-20 21:31:46.879 [http-nio-8181-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-09-20 21:31:46.881 [http-nio-8181-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-09-20 21:31:47.856 [http-nio-8181-exec-5] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 514 ms
+2025-09-20 21:31:53.710 [http-nio-8181-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-09-20 21:31:53.946 [http-nio-8181-exec-6] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ab4a46c
+2025-09-20 21:31:53.948 [http-nio-8181-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-09-20 21:31:53.956 [http-nio-8181-exec-6] DEBUG c.d.s.m.SysUserMapper.selectList - ==>  Preparing: SELECT user_id,dept_id,user_name,nick_name,password,email,phone_number,status,create_time,update_time FROM sys_user WHERE (user_name = ?)
+2025-09-20 21:31:53.982 [http-nio-8181-exec-6] DEBUG c.d.s.m.SysUserMapper.selectList - ==> Parameters: string(String)
+2025-09-20 21:31:54.003 [http-nio-8181-exec-6] DEBUG c.d.s.m.SysUserMapper.selectList - <==      Total: 0
+2025-09-20 21:31:54.076 [http-nio-8181-exec-6] ERROR c.d.s.common.GlobalExceptionHandler - 用户名或密码错误
+org.springframework.security.authentication.BadCredentialsException: 用户名或密码错误
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:141)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182)
+	at com.dtcomg.system.controller.SysLoginController.login(SysLoginController.java:40)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.dtcomg.system.security.JwtAuthenticationTokenFilter.doFilterInternal(JwtAuthenticationTokenFilter.java:54)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2025-09-20 21:32:02.055 [http-nio-8181-exec-10] DEBUG c.d.s.m.SysUserMapper.selectList - ==>  Preparing: SELECT user_id,dept_id,user_name,nick_name,password,email,phone_number,status,create_time,update_time FROM sys_user WHERE (user_name = ?)
+2025-09-20 21:32:02.056 [http-nio-8181-exec-10] DEBUG c.d.s.m.SysUserMapper.selectList - ==> Parameters: admin(String)
+2025-09-20 21:32:02.060 [http-nio-8181-exec-10] DEBUG c.d.s.m.SysUserMapper.selectList - <==      Total: 1
+2025-09-20 21:32:02.060 [http-nio-8181-exec-10] DEBUG c.d.s.m.S.findPermsByUserId - ==>  Preparing: select m.perms from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id = ur.role_id where ur.user_id = ? and m.perms is not null and m.perms != ''
+2025-09-20 21:32:02.062 [http-nio-8181-exec-10] DEBUG c.d.s.m.S.findPermsByUserId - ==> Parameters: 1(Long)
+2025-09-20 21:32:02.065 [http-nio-8181-exec-10] DEBUG c.d.s.m.S.findPermsByUserId - <==      Total: 0
