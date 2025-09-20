@@ -46,5 +46,15 @@ public class GlobalExceptionHandler {
         return ApiResult.error(HttpStatus.FORBIDDEN.value(), "没有权限，请联系管理员授权");
     }
 
+    /**
+     * 用户名或密码错误异常
+     */
+    @ExceptionHandler(org.springframework.security.authentication.BadCredentialsException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ApiResult<?> handleBadCredentialsException(org.springframework.security.authentication.BadCredentialsException e) {
+        logger.error("用户名或密码错误", e);
+        return ApiResult.error(HttpStatus.UNAUTHORIZED.value(), "用户名或密码错误");
+    }
+
     // You can add more exception handlers here for specific exceptions like MethodArgumentNotValidException, etc.
 }
