@@ -24,10 +24,8 @@ public class SysDeptController {
     @GetMapping
     @PreAuthorize("@ss.hasPermi('system:dept:list')")
     public ApiResult<List<SysDept>> list() {
-        // In a real implementation, a service method would build the tree structure.
         List<SysDept> list = deptService.list();
-        // TODO: Implement tree building logic.
-        return ApiResult.success(list);
+        return ApiResult.success(deptService.buildDeptTree(list));
     }
 
     @Operation(summary = "根据ID获取部门详情")
@@ -58,7 +56,7 @@ public class SysDeptController {
     @DeleteMapping("/{id}")
     @PreAuthorize("@ss.hasPermi('system:dept:remove')")
     public ApiResult<?> deleteDept(@Parameter(description = "部门ID") @PathVariable Long id) {
-        // Note: Deleting a parent dept should also handle its children.
-        return ApiResult.success(deptService.removeById(id));
+        deptService.deleteDept(id);
+        return ApiResult.success();
     }
 }

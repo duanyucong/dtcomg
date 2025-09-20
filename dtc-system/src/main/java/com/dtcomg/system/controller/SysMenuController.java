@@ -24,10 +24,8 @@ public class SysMenuController {
     @GetMapping
     @PreAuthorize("@ss.hasPermi('system:menu:list')")
     public ApiResult<List<SysMenu>> list() {
-        // In a real implementation, a service method would build the tree structure.
         List<SysMenu> list = menuService.list();
-        // TODO: Implement tree building logic.
-        return ApiResult.success(list);
+        return ApiResult.success(menuService.buildMenuTree(list));
     }
 
     @Operation(summary = "根据ID获取菜单详情")
@@ -58,8 +56,7 @@ public class SysMenuController {
     @DeleteMapping("/{id}")
     @PreAuthorize("@ss.hasPermi('system:menu:remove')")
     public ApiResult<?> deleteMenu(@Parameter(description = "菜单ID") @PathVariable Long id) {
-        // Note: Deleting a parent menu should also handle its children.
-        // This logic should be in the service layer.
-        return ApiResult.success(menuService.removeById(id));
+        menuService.deleteMenu(id);
+        return ApiResult.success();
     }
 }

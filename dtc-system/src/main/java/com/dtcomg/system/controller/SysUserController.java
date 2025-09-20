@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Tag(name = "用户管理")
 @RestController
 @RequestMapping("/api/users")
@@ -45,8 +47,7 @@ public class SysUserController {
     @PostMapping
     @PreAuthorize("@ss.hasPermi('system:user:add')")
     public ApiResult<?> addUser(@RequestBody SysUser user) {
-        // In a real app, hash the password before saving
-        return ApiResult.success(userService.save(user));
+        return ApiResult.success(userService.createUser(user));
     }
 
     @Operation(summary = "修改用户信息")
@@ -64,5 +65,13 @@ public class SysUserController {
     @PreAuthorize("@ss.hasPermi('system:user:remove')")
     public ApiResult<?> deleteUser(@Parameter(description = "用户ID") @PathVariable Long id) {
         return ApiResult.success(userService.removeById(id));
+    }
+
+    @Operation(summary = "更新用户角色")
+    @PutMapping("/{id}/roles")
+    @PreAuthorize("@ss.hasPermi('system:user:edit')")
+    public ApiResult<?> updateUserRoles(@Parameter(description = "用户ID") @PathVariable Long id, @RequestBody List<Long> roleIds) {
+        userService.updateUserRoles(id, roleIds);
+        return ApiResult.success();
     }
 }

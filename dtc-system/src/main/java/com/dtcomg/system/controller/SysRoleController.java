@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Tag(name = "角色管理")
 @RestController
 @RequestMapping("/api/roles")
@@ -63,5 +65,13 @@ public class SysRoleController {
     @PreAuthorize("@ss.hasPermi('system:role:remove')")
     public ApiResult<?> deleteRole(@Parameter(description = "角色ID") @PathVariable Long id) {
         return ApiResult.success(roleService.removeById(id));
+    }
+
+    @Operation(summary = "更新角色菜单")
+    @PutMapping("/{id}/menus")
+    @PreAuthorize("@ss.hasPermi('system:role:edit')")
+    public ApiResult<?> updateRoleMenus(@Parameter(description = "角色ID") @PathVariable Long id, @RequestBody List<Long> menuIds) {
+        roleService.updateRoleMenus(id, menuIds);
+        return ApiResult.success();
     }
 }

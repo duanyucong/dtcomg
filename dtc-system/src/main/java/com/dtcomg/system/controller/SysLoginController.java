@@ -10,15 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import com.dtcomg.system.service.ISysRoleService;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Tag(name = "用户认证")
 @RestController
@@ -30,6 +30,9 @@ public class SysLoginController {
 
     @Autowired
     private JwtUtils jwtUtils;
+
+    @Autowired
+    private ISysRoleService roleService;
 
     @Operation(summary = "用户登录")
     @PostMapping("/login")
@@ -53,11 +56,16 @@ public class SysLoginController {
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
         SysUser user = loginUser.getUser();
 
-        // TODO: Get roles and permissions
+        // Get roles and permissions
+        Set<String> roles = roleService.findRolesByUserId(user.getUserId());
+        Set<String> permissions = loginUser.getAuthorities().stream()
+                .map(GrantedAuthority::getAuthority)
+                .collect(Collectors.toSet());
+
         Map<String, Object> data = new HashMap<>();
         data.put("user", user);
-        data.put("permissions", loginUser.getAuthorities()); // This is currently null
-        data.put("roles", null); // TODO
+        data.put("permissions", permissions);
+        data.put("roles", roles);
 
         return ApiResult.success(data);
     }
