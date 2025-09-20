@@ -97,7 +97,27 @@ CREATE TABLE sys_role_menu (
 -- 7. Role-Department association table
 -- ----------------------------
 CREATE TABLE sys_role_dept (
-  role_id       bigint(20)      NOT NULL                   COMMENT '角色ID',
+  dept_id       bigint(20)      NOT NULL                   COMMENT '角色ID',
   dept_id       bigint(20)      NOT NULL                   COMMENT '部门ID',
   PRIMARY KEY(role_id, dept_id)
 ) ENGINE=InnoDB COMMENT='角色和部门关联表';
+
+-- ----------------------------
+-- 8. Initialize default data
+-- ----------------------------
+
+-- Initialize department: Development Department
+INSERT INTO sys_dept (dept_id, parent_id, dept_name, order_num, leader, status, del_flag, create_by, create_time, update_by, update_time) VALUES (100, 0, '开发部', 0, '管理员', '0', '0', 'admin', now(), 'admin', now());
+
+-- Initialize super admin role
+INSERT INTO sys_role (role_id, role_name, role_key, role_sort, status, del_flag, create_by, create_time, update_by, update_time) VALUES (1, '超级管理员', 'admin', 1, '0', '0', 'admin', now(), 'admin', now());
+
+-- Initialize admin user
+INSERT INTO sys_user (user_id, dept_id, user_name, nick_name, password, email, phone_number, status, del_flag, create_by, create_time, update_by, update_time) VALUES (1, 100, 'admin', '超级管理员', '$2a$10$7JB720yubVSZvUI0rJb3Qe96QSKkP_1u3a3/x1X9vB.K2I2m.6O.W', 'admin@dtcomg.com', '13888888888', '0', '0', 'admin', now(), 'admin', now());
+
+-- Associate admin user with super admin role
+INSERT INTO sys_user_role (user_id, role_id) VALUES (1, 1);
+
+-- Note: For super admin role, all menu permissions should be granted.
+-- This might need to be done manually or through an application feature after initial setup.
+
