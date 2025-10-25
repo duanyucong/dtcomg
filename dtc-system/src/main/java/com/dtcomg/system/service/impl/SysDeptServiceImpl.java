@@ -2,11 +2,15 @@ package com.dtcomg.system.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.dtcomg.system.domain.SysDept;
+import com.dtcomg.system.domain.SysUser;
 import com.dtcomg.system.mapper.SysDeptMapper;
+import com.dtcomg.system.mapper.SysUserMapper;
 import com.dtcomg.system.service.ISysDeptService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.dtcomg.system.common.ServiceException;
 
 import java.util.ArrayList;
@@ -19,6 +23,9 @@ import java.util.stream.Collectors;
  */
 @Service
 public class SysDeptServiceImpl extends ServiceImpl<SysDeptMapper, SysDept> implements ISysDeptService {
+
+    @Autowired
+    private SysUserMapper userMapper;
 
     @Override
     public List<SysDept> buildDeptTree(List<SysDept> depts) {
@@ -46,11 +53,20 @@ public class SysDeptServiceImpl extends ServiceImpl<SysDeptMapper, SysDept> impl
 
     @Override
     public void deleteDept(Long deptId) {
+        // 检查是否存在子部门
         if (hasChild(deptId)) {
             throw new ServiceException("存在子部门,不允许删除");
         }
-        // TODO: Check if the dept is assigned to any roles.
-        removeById(deptId);
+        
+        // 检查部门是否被用户使用
+        if (userMapper.selectCount(new LambdaQueryWrapper<SysUser>().eq(SysUser::getDeptId, deptId)) > 0) {
+            throw new ServiceException("部门已被用户使用,不允许删除");
+        }
+        
+        // 逻辑删除，使用LambdaUpdateWrapper直接更新del_flag为'2'
+        LambdaUpdateWrapper<SysDept> updateWrapper = new LambdaUpdateWrapper<>();
+        updateWrapper.eq(SysDept::getDeptId, deptId).set(SysDept::getDelFlag, "2");
+        update(updateWrapper);
     }
 
     /**

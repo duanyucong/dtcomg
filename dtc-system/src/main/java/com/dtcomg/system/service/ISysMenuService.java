@@ -20,11 +20,26 @@ public interface ISysMenuService extends IService<SysMenu> {
     Set<String> findPermsByUserId(Long userId);
 
     /**
-     * 构建菜单树
-     * @param menus 菜单列表
-     * @return 树形结构的菜单列表
+     * 构建导航菜单树
+     * @param list 菜单列表
+     * @return 树形结构
      */
     List<SysMenu> buildMenuTree(List<SysMenu> menus);
+
+    List<SysMenu> buildNevMenuTree(List<SysMenu> menus);
+
+    List<SysMenu> selectMenuTreeByUserId(Long userId);
+
+    /**
+     * Check if a menu has child menus.
+     *
+
+    List<SysMenu> buildMenuTree(List<SysMenu> menus);
+
+//    /**
+//     * 获取所有正常状态的菜单树（用于导航菜单）
+//     */
+//    List<SysMenu> listActiveMenus();
 
     /**
      * 是否存在子节点

@@ -1,81 +1,41 @@
 package com.dtcomg.system.domain;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
+import lombok.Data;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
  * Role entity, maps to sys_role table.
  */
+@Data
 @TableName("sys_role")
 public class SysRole implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @TableId
+    @TableId(type = IdType.AUTO)
     private Long roleId;
     private String roleName;
     private String roleKey; // Permission character
     private Integer roleSort;
     private String status; // 0=active, 1=disabled
-    private Date createTime;
-    private Date updateTime;
 
-    // Getters and Setters
+    @TableField(fill = FieldFill.INSERT)
+    private String createBy;
 
-    public Long getRoleId() {
-        return roleId;
-    }
+    @TableField(fill = FieldFill.INSERT)
+    private LocalDateTime createTime;
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private String updateBy;
 
-    public String getRoleName() {
-        return roleName;
-    }
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private LocalDateTime updateTime;
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
-    }
+    @TableLogic
+    @TableField("del_flag")
+    private String delFlag;
 
-    public String getRoleKey() {
-        return roleKey;
-    }
-
-    public void setRoleKey(String roleKey) {
-        this.roleKey = roleKey;
-    }
-
-    public Integer getRoleSort() {
-        return roleSort;
-    }
-
-    public void setRoleSort(Integer roleSort) {
-        this.roleSort = roleSort;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
 }

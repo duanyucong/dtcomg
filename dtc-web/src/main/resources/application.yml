@@ -1,13 +1,56 @@
 server:
-  port: 8181
+  port: 8080
 
 spring:
-  application:
-    name: dtcomg
   datasource:
-    url: jdbc:mysql://localhost:3306/dtcomg?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost:3306/dtcomg?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-  jackson:
-    property-naming-strategy: SNAKE_CASE
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      filters: stat,wall,log4j
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+  mybatis-plus:
+    configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    global-config:
+      db-config:
+        id-type: AUTO
+        logic-delete-field: deleted
+        logic-delete-value: 1
+        logic-not-delete-value: 0
+    mapper-locations: classpath*:mapper/**/*.xml
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+
+swagger:
+  enabled: false
+  title: DTC_OMG
+  description: 接口文档
+  version: 1.0.0
+  base-package: com.dtcomg.web.controller, com.dtcomg.system.controller
+  contact:
+    name: API 支持团队
+    email: support@example.com
+  security:
+    name: Authorization
+    type: apiKey
+    in: header

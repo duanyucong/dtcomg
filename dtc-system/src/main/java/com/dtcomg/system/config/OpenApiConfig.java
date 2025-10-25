@@ -30,6 +30,9 @@ public class OpenApiConfig {
     @Value("${spring.application.description:DTC_OMG}")
     private String applicationDescription;
 
+    @Value("${server.port:8181}")
+    private String serverPort;
+
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
@@ -45,8 +48,8 @@ public class OpenApiConfig {
                                 .name("Apache 2.0")
                                 .url("https://www.apache.org/licenses/LICENSE-2.0")))
                 .servers(List.of(
-                        new Server().url("http://localhost:8181").description("本地开发环境"),
-                        new Server().url("http://124.223.159.119:8181").description("测试环境"),
+                        new Server().url("http://localhost:" + serverPort).description("本地开发环境"),
+                        new Server().url("http://117.72.145.103:" + serverPort).description("测试环境"),
                         new Server().url("https://api.ruihua.com").description("生产环境")
                 ))
                 .addSecurityItem(new SecurityRequirement().addList("Bearer Authentication"))

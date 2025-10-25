@@ -5,7 +5,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "com.dtcomg")
-@MapperScan("com.dtcomg.system.mapper")
+@MapperScan("com.dtcomg.*.mapper")
 public class DtcomgApplication {
 
 	public static void main(String[] args) {

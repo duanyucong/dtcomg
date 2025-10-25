@@ -28,7 +28,9 @@ public class SecurityService {
         if (authorities == null) {
             return false;
         }
+        // 显示所有权限
+//        authorities.forEach(grantedAuthority -> System.out.println(grantedAuthority.getAuthority() + " 匹配 " + permission + " 结果:" + grantedAuthority.getAuthority().contains(permission)));
         // Check if any authority matches the given permission string.
-        return authorities.stream().anyMatch(grantedAuthority -> permission.equals(grantedAuthority.getAuthority()));
+        return authorities.stream().anyMatch(grantedAuthority -> grantedAuthority.getAuthority().contains(permission));
     }
 }

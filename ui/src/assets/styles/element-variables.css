@@ -1,0 +1,27 @@
+/* ui/src/assets/styles/element-variables.css */
+
+:root {
+  /* Font Sizes */
+  --el-font-size-extra-large: 20px; /* Page Titles */
+  --el-font-size-large: 18px;      /* Card Headers */
+  --el-font-size-medium: 16px;     /* Not explicitly used in plan, but good to have */
+  --el-font-size-base: 14px;       /* Regular Text */
+  --el-font-size-small: 13px;      /* Secondary/Label Text */
+  --el-font-size-extra-small: 12px;/* Smallest text */
+  
+  /* 浅色模式下的菜单颜色 */
+  --el-menu-bg-color: #ffffff;
+  --el-menu-text-color: #303133;
+  --el-menu-active-color: #409eff;
+  --el-menu-hover-bg-color: #f5f7fa;
+  --el-border-color-dark: #e4e7ed;
+}
+
+/* 暗黑模式下的菜单颜色 */
+html.dark {
+  --el-menu-bg-color: #1f2d3d;
+  --el-menu-text-color: #e5eaf3;
+  --el-menu-active-color: #ffd04b;
+  --el-menu-hover-bg-color: #263445;
+  --el-border-color-dark: #283142;
+}

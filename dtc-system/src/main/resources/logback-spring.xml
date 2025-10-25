@@ -76,7 +76,7 @@
     <logger name="com.alibaba.druid" level="INFO"/>
 
     <!-- 异常日志记录器 -->
-    <logger name="com.dtcomg.rui_hua_java.exception" level="ERROR" additivity="true">
+    <logger name="com.dtcomg.system.exception" level="ERROR" additivity="true">
         <appender-ref ref="ERROR_FILE"/>
     </logger>
 

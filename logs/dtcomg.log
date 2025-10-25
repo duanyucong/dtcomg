@@ -1,0 +1,34 @@
+2025-10-25 20:59:58.388 [background-preinit] INFO  [org.hibernate.validator.internal.util.Version] - HV000001: Hibernate Validator 8.0.2.Final
+2025-10-25 20:59:58.437 [main] INFO  [com.dtcomg.web.DtcomgApplication] - Starting DtcomgApplication using Java 21.0.8 with PID 43604 (D:\Project\Java\dtcomg\dtc-web\target\classes started by duany in D:\Project\Java\dtcomg)
+2025-10-25 20:59:58.438 [main] INFO  [com.dtcomg.web.DtcomgApplication] - No active profile set, falling back to 1 default profile: "default"
+2025-10-25 20:59:59.768 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] - Tomcat initialized with port 8080 (http)
+2025-10-25 20:59:59.784 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] - Initializing ProtocolHandler ["http-nio-8080"]
+2025-10-25 20:59:59.787 [main] INFO  [org.apache.catalina.core.StandardService] - Starting service [Tomcat]
+2025-10-25 20:59:59.787 [main] INFO  [org.apache.catalina.core.StandardEngine] - Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-10-25 20:59:59.853 [main] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] - Initializing Spring embedded WebApplicationContext
+2025-10-25 20:59:59.853 [main] INFO  [o.s.b.w.s.c.ServletWebServerApplicationContext] - Root WebApplicationContext: initialization completed in 1369 ms
+2025-10-25 21:00:00.202 [main] WARN  [c.b.mybatisplus.core.metadata.TableInfoHelper] - Can not find table primary key in Class: "com.dtcomg.system.domain.SysRoleMenu".
+2025-10-25 21:00:00.203 [main] WARN  [c.b.mybatisplus.core.injector.DefaultSqlInjector] - class com.dtcomg.system.domain.SysRoleMenu ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-10-25 21:00:00.218 [main] WARN  [c.b.mybatisplus.core.metadata.TableInfoHelper] - Can not find table primary key in Class: "com.dtcomg.system.domain.SysUserRole".
+2025-10-25 21:00:00.219 [main] WARN  [c.b.mybatisplus.core.injector.DefaultSqlInjector] - class com.dtcomg.system.domain.SysUserRole ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2025-10-25 21:00:00.554 [main] INFO  [o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer] - Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2025-10-25 21:00:01.066 [main] WARN  [o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration] - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-10-25 21:00:01.194 [main] INFO  [org.apache.coyote.http11.Http11NioProtocol] - Starting ProtocolHandler ["http-nio-8080"]
+2025-10-25 21:00:01.209 [main] INFO  [o.s.boot.web.embedded.tomcat.TomcatWebServer] - Tomcat started on port 8080 (http) with context path '/'
+2025-10-25 21:00:01.225 [main] INFO  [com.dtcomg.web.DtcomgApplication] - Started DtcomgApplication in 3.382 seconds (process running for 3.82)
+2025-10-25 21:00:01.228 [main] INFO  [com.dtcomg.system.task.DatabaseBackupTask] - 应用启动，开始执行数据库备份
+2025-10-25 21:00:01.317 [main] INFO  [com.dtcomg.system.task.DatabaseBackupTask] - 使用mysqldump路径: C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqldump
+2025-10-25 21:00:01.318 [main] INFO  [com.dtcomg.system.task.DatabaseBackupTask] - 执行备份命令: [cmd.exe, /c, "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqldump" -uroot -proot dtcomg]
+2025-10-25 21:00:01.318 [main] INFO  [com.dtcomg.system.task.DatabaseBackupTask] - 备份输出重定向到文件: D:\Project\Java\dtcomg\backup_sql\dtcomg_backup_20251025_210001.sql
+2025-10-25 21:00:01.435 [main] INFO  [com.dtcomg.system.task.DatabaseBackupTask] - 备份文件创建成功，大小: 14854 字节
+2025-10-25 21:00:01.435 [main] INFO  [com.dtcomg.system.task.DatabaseBackupTask] - 数据库备份成功，文件保存至: D:\Project\Java\dtcomg\backup_sql\dtcomg_backup_20251025_210001.sql
+2025-10-25 21:00:01.436 [main] INFO  [com.dtcomg.web.StartupBanner] - 
+----------------------------------------------------------
+	Application 'dtcomg' is running! Access URLs:
+	Local : 		http://localhost:8080
+	Swagger UI: 	http://localhost:8080/swagger-ui/index.html
+----------------------------------------------------------
+2025-10-25 21:04:36.784 [http-nio-8080-exec-1] INFO  [o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-25 21:04:36.784 [http-nio-8080-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] - Initializing Servlet 'dispatcherServlet'
+2025-10-25 21:04:36.786 [http-nio-8080-exec-1] INFO  [org.springframework.web.servlet.DispatcherServlet] - Completed initialization in 2 ms
+2025-10-25 21:04:37.136 [http-nio-8080-exec-1] INFO  [com.alibaba.druid.pool.DruidDataSource] - {dataSource-1} inited

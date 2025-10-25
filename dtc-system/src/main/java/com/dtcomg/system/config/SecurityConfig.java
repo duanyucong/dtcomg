@@ -60,7 +60,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authz -> authz
                         // Allow public access to login endpoint
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                        .requestMatchers("/api/login").permitAll()
+                        .requestMatchers("/api/auth/login").permitAll()
                         // All other requests need to be authenticated
                         .anyRequest().authenticated()
                 );

@@ -1,11 +1,13 @@
 package com.dtcomg.system.controller;
 
-import com.dtcomg.system.common.ApiResult;
+import com.dtcomg.system.common.Result;
 import com.dtcomg.system.domain.SysUser;
 import com.dtcomg.system.security.JwtUtils;
 import com.dtcomg.system.security.LoginUser;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,7 +24,7 @@ import java.util.stream.Collectors;
 
 @Tag(name = "用户认证")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/auth")
 public class SysLoginController {
 
     @Autowired
@@ -36,7 +38,7 @@ public class SysLoginController {
 
     @Operation(summary = "用户登录")
     @PostMapping("/login")
-    public ApiResult<?> login(@RequestBody LoginRequest loginRequest) {
+    public Result<?> login(@RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
@@ -46,12 +48,12 @@ public class SysLoginController {
         Map<String, String> tokenMap = new HashMap<>();
         tokenMap.put("token", token);
 
-        return ApiResult.success(tokenMap);
+        return Result.success(tokenMap);
     }
 
     @Operation(summary = "获取用户信息")
     @GetMapping("/getInfo")
-    public ApiResult<?> getInfo() {
+    public Result<?> getInfo() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         LoginUser loginUser = (LoginUser) authentication.getPrincipal();
         SysUser user = loginUser.getUser();
@@ -67,34 +69,21 @@ public class SysLoginController {
         data.put("permissions", permissions);
         data.put("roles", roles);
 
-        return ApiResult.success(data);
+        return Result.success(data);
     }
 
     @Operation(summary = "用户登出")
     @PostMapping("/logout")
-    public ApiResult<?> logout() {
-        return ApiResult.success("登出成功");
+    public Result<?> logout() {
+        return Result.success("登出成功");
     }
 
     // Inner class for login request body
-    static class LoginRequest {
+    @Setter
+    @Getter
+    public static class LoginRequest {
         private String username;
         private String password;
 
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
     }
 }

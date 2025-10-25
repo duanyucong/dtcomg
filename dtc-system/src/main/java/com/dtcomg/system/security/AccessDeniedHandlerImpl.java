@@ -1,6 +1,6 @@
 package com.dtcomg.system.security;
 
-import com.dtcomg.system.common.ApiResult;
+import com.dtcomg.system.common.Result;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,7 +24,7 @@ public class AccessDeniedHandlerImpl implements AccessDeniedHandler, Serializabl
         response.setStatus(403);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        ApiResult<?> result = ApiResult.error(403, "没有权限，禁止访问");
+        Result<?> result = Result.error(403, "没有权限，禁止访问");
         ObjectMapper mapper = new ObjectMapper();
         response.getWriter().print(mapper.writeValueAsString(result));
     }

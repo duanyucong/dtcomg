@@ -12,4 +12,13 @@
         where ur.user_id = #{userId} and m.perms is not null and m.perms != ''
     </select>
 
+    <select id="selectMenusByUserId" resultType="com.dtcomg.system.domain.SysMenu">
+        select distinct m.menu_id, m.parent_id, m.menu_name, m.path, m.component, m.perms, m.icon, m.menu_type, m.order_num, m.status, m.is_show, m.create_time
+        from sys_menu m
+                 left join sys_role_menu rm on m.menu_id = rm.menu_id
+                 left join sys_user_role ur on rm.role_id = ur.role_id
+        where ur.user_id = #{userId}
+        order by m.order_num
+    </select>
+
 </mapper>

@@ -21,4 +21,12 @@ public interface SysRoleMapper extends BaseMapper<SysRole> {
      * @return 角色列表
      */
     Set<String> findRolesByUserId(@Param("userId") Long userId);
+
+    /**
+     * 根据用户名查询角色
+     *
+     * @param username 用户名
+     * @return 角色列表
+     */
+    Set<String> findRolesByUserName(@Param("username") String username);
 }

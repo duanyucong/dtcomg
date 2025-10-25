@@ -1,6 +1,6 @@
 package com.dtcomg.system.security;
 
-import com.dtcomg.system.common.ApiResult;
+import com.dtcomg.system.common.Result;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,7 +24,7 @@ public class AuthenticationEntryPointImpl implements AuthenticationEntryPoint, S
         response.setStatus(401);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        ApiResult<?> result = ApiResult.error(401, "请求访问：" + request.getRequestURI() + "，认证失败，无法访问系统资源");
+        Result<?> result = Result.error(401, "请求访问：" + request.getRequestURI() + "，认证失败，无法访问系统资源");
         // Use Jackson ObjectMapper to serialize the response
         ObjectMapper mapper = new ObjectMapper();
         response.getWriter().print(mapper.writeValueAsString(result));

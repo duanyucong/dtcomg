@@ -1,6 +1,6 @@
 package com.dtcomg.system.controller;
 
-import com.dtcomg.system.common.ApiResult;
+import com.dtcomg.system.common.Result;
 import com.dtcomg.system.domain.SysDept;
 import com.dtcomg.system.service.ISysDeptService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -23,40 +23,42 @@ public class SysDeptController {
     @Operation(summary = "获取部门列表（树形）")
     @GetMapping
     @PreAuthorize("@ss.hasPermi('system:dept:list')")
-    public ApiResult<List<SysDept>> list() {
+    public Result<List<SysDept>> list() {
         List<SysDept> list = deptService.list();
-        return ApiResult.success(deptService.buildDeptTree(list));
+        return Result.success(deptService.buildDeptTree(list));
     }
+
+
 
     @Operation(summary = "根据ID获取部门详情")
     @GetMapping("/{id}")
     @PreAuthorize("@ss.hasPermi('system:dept:query')")
-    public ApiResult<SysDept> getDept(@Parameter(description = "部门ID") @PathVariable Long id) {
-        return ApiResult.success(deptService.getById(id));
+    public Result<SysDept> getDept(@Parameter(description = "部门ID") @PathVariable Long id) {
+        return Result.success(deptService.getById(id));
     }
 
     @Operation(summary = "新增部门")
     @PostMapping
     @PreAuthorize("@ss.hasPermi('system:dept:add')")
-    public ApiResult<?> addDept(@RequestBody SysDept dept) {
-        return ApiResult.success(deptService.save(dept));
+    public Result<?> addDept(@RequestBody SysDept dept) {
+        return Result.success(deptService.save(dept));
     }
 
     @Operation(summary = "修改部门信息")
     @PutMapping("/{id}")
     @PreAuthorize("@ss.hasPermi('system:dept:edit')")
-    public ApiResult<?> editDept(
+    public Result<?> editDept(
             @Parameter(description = "部门ID") @PathVariable Long id,
             @RequestBody SysDept dept) {
         dept.setDeptId(id);
-        return ApiResult.success(deptService.updateById(dept));
+        return Result.success(deptService.updateById(dept));
     }
 
     @Operation(summary = "删除部门")
     @DeleteMapping("/{id}")
     @PreAuthorize("@ss.hasPermi('system:dept:remove')")
-    public ApiResult<?> deleteDept(@Parameter(description = "部门ID") @PathVariable Long id) {
+    public Result<?> deleteDept(@Parameter(description = "部门ID") @PathVariable Long id) {
         deptService.deleteDept(id);
-        return ApiResult.success();
+        return Result.success();
     }
 }
