@@ -28,8 +28,6 @@ public class SysDeptController {
         return Result.success(deptService.buildDeptTree(list));
     }
 
-
-
     @Operation(summary = "根据ID获取部门详情")
     @GetMapping("/{id}")
     @PreAuthorize("@ss.hasPermi('system:dept:query')")
